@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import ContadorContext from '../../context/context'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -10,8 +10,6 @@ import PersonOutlineRoundedIcon from '@material-ui/icons/PersonOutlineRounded';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-
-import { convertCompilerOptionsFromJson } from "typescript";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -53,13 +51,13 @@ const ContactForm = () => {
     email: ''
   });
 
-  const handlerInput = (e: any): void => {
+  const handleInput = (e: any): void => {
     setValue({
       ...contact, [e.target.name]: e.target.value
     })
   };
 
-  const handlerSubmit = (e: any): void => {
+  const handleSubmit = (e: any): void => {
     e.preventDefault();
     setValue({
       nombre: '',
@@ -69,7 +67,7 @@ const ContactForm = () => {
     })    
     contadorContext.counter = contadorContext.counter + 1;
     contadorContext.email = contact.email;   
-    console.log(contadorContext.counter +' '+ contadorContext.email ); 
+    alert('Contexto Contador: '+ contadorContext.counter +' Último email: '+ contadorContext.email ); 
   };
 
   return (
@@ -86,13 +84,13 @@ const ContactForm = () => {
               id="contact"
               className={classes.root}
               noValidate={false}
-              onSubmit={handlerSubmit}
+              onSubmit={handleSubmit}
               autoComplete="off">
               <Box><TextField id="nombre"
                 label="nombre"
                 name="nombre"
                 value={contact?.nombre || ''}
-                onChange={handlerInput}
+                onChange={handleInput}
                 required
                 InputProps={{
                   startAdornment: (
@@ -106,7 +104,7 @@ const ContactForm = () => {
                   label="apellido paterno"
                   name="apellidoPaterno"
                   value={contact?.apellidoPaterno || ''}
-                  onChange={handlerInput}
+                  onChange={handleInput}
                   required
                   InputProps={{
                     startAdornment: (
@@ -119,7 +117,7 @@ const ContactForm = () => {
                   label="apellido materno"
                   name="apellidoMaterno"
                   value={contact?.apellidoMaterno || ''}
-                  onChange={handlerInput}
+                  onChange={handleInput}
                   required
                   InputProps={{
                     startAdornment: (
@@ -133,7 +131,7 @@ const ContactForm = () => {
                   label="email"
                   name="email"
                   value={contact?.email || ''}
-                  onChange={handlerInput}
+                  onChange={handleInput}
                   required
                   InputProps={{
                     startAdornment: (
