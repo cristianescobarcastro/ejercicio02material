@@ -12,7 +12,7 @@ const Footer = () => {
                     direction="column"
                     alignItems="center"
                     justify="center"
-                    style={{ minHeight: '80vh' }}>
+                    style={{ minHeight: '30vh' }}>
                     <Grid >
                         <Box
                             borderBottom={2}

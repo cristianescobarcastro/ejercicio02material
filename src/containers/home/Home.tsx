@@ -1,26 +1,26 @@
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 import Menu from "../../components/menu/LandingMenu"
-import ContactForm from "../../components/contact-form/ContactForm"
+import SectionPrincipal from "../../components/section-principal/sectionPrincipal"
+import SectionSecondary from "../../components/section-secondary/sectionSecondary"
 
 const Home = () => {
     return (
         <div>
-            <div className="row">
-                <div className="col-4 offset-4">
-                    <Header>Landing Page Ejercicio Clase 02 - Material-ui</Header>
-                </div>
-                <div className="row">
-                    <div className="col-4 offset-2">
-                        <Menu></Menu>
-                    </div>
-                </div>
-                <div className="col-4 offset-4">
-                    <ContactForm></ContactForm>
-                </div>
-                <div className="col-4 offset-4">
-                    <Footer></Footer>
-                </div>
+            <div >
+                <Header>Landing Page Ejercicio Clase 02 - Material-ui</Header>
+            </div>
+            <div >
+                <Menu></Menu>
+            </div>
+            <div >
+                <SectionPrincipal></SectionPrincipal>
+            </div>
+            <div >
+                <SectionSecondary></SectionSecondary>
+            </div>
+            <div >
+                <Footer></Footer>
             </div>
         </div>
     )
